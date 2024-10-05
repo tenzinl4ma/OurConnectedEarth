@@ -1,0 +1,127 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Video Background */
+.video-background video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    z-index: -1;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: rgba(0, 0, 0, 0.7); /* Transparent background */
+}
+
+.navbar .logo img {
+    height: 80px; /* Bigger logo */
+    transition: transform 0.5s ease; /* Logo hover effect */
+}
+
+.navbar .logo img:hover {
+    transform: scale(1.1); /* Enlarge logo on hover */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ffcc00; /* Color change on hover */
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #ffcc00;
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%; /* Expanding underline effect */
+}
+
+/* Main Content */
+.content {
+    text-align: center;
+    color: white;
+    padding: 100px 20px;
+    font-size: 2rem;
+    z-index: 1;
+}
+
+/* Footer */
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    transform: translateY(0);
+    transition: transform 0.5s ease;
+}
+
+.footer.hidden {
+    transform: translateY(100%);
+}
+
+/* Footer Arrow */
+.arrow-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.arrow-btn:hover {
+    transform: scale(1.2);
+}
+
+/* Hover animations for interactivity */
+.nav-links li {
+    animation: slide-in 1s ease forwards;
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
